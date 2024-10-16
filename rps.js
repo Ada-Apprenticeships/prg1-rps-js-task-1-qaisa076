@@ -5,32 +5,30 @@ function rockPaperScissors(player1, player2) {
   }
   // Rock beating scissors
   else if ((player1 === "rock") && (player2 === "scissors")){
-    return "player 1"
+    return "player1"
   }
   // Paper beating rock
   else if ((player1 === "paper") && (player2 === "rock")) {
-    return "player 1"
+    return "player1"
   }
   // Scissors beating paper
   else if ((player1 === "scissors") && (player2 === "paper")) {
-    return "player 1"
+    return "player1"
   }
   else {
-    return "player 2"
+    return "player2"
   }
 }
-
-
-
-
-
-
-
-
-
 
 // Leave this code here for the automated tests
 module.exports = {
   rockPaperScissors,
 }
 
+// Letting user input whether they want rock paper or scissors
+const readline = require("readline-sync")
+let player1Input = readline.question("Rock, Paper or Scissors? ")
+let player2Input = readline.question("Rock, Paper or Scissors? ")
+
+// Outputting the winner
+console.log(rockPaperScissors(player1Input,player2Input))
